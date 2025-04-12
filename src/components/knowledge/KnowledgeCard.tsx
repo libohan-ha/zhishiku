@@ -2,7 +2,6 @@
 
 import { supabase } from '@/lib/supabase';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 type KnowledgeCardProps = {
@@ -21,7 +20,8 @@ export default function KnowledgeCard({
   onDelete,
 }: KnowledgeCardProps) {
   const [isDeleting, setIsDeleting] = useState(false);
-  const router = useRouter();
+  // 暂时不需要 router，但将来可能会用到
+  // const router = useRouter();
 
   // Format the date
   const formattedDate = new Date(createdAt).toLocaleDateString('zh-CN', {
